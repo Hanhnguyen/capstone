@@ -1,5 +1,12 @@
-$baseFontFamily: Lato;
-@import url(http://fonts.googleapis.com/css?family=Lato);
+$baseFontFamily: Merriweather Sans;
+@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans);
+
+$navbarBackground: black;
+$navbarText: white;
+$navbarBackgroundHighlight: black;
+$navbarLinkColor: white;
+$navbarLinkColorHover: gray;
+$navbarLinkColorActive: gray;
 
 @import 'bootstrap';
 
