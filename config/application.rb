@@ -60,6 +60,5 @@ module TravelApp
     config.assets.version = '1.0'
 
     #Required for Devise on Heroku
-    config.assets.initalize_on_precompile = false
-  end
+    config.assets.initialize_on_precompile = false  
 end
