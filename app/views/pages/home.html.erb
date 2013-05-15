@@ -1,3 +1,7 @@
+<% if user_signed_in? %>
+	<a href = "http://25.media.tumblr.com/tumblr_luxlh9O4MK1qg5s1lo1_400.gif">HELLO LINDSAYYYY!!</a>
+<% else %>
+
 <div class="hero-unit">
 	<h1>Welcome to TravelJoy!</h1>
 	<p>
@@ -7,3 +11,4 @@
 		<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
 	</p>
 </div>
+<% end %>
