@@ -1,10 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+	<div class="span6 offset3">
+		<div class="well">
+			<p>
+	  		<%= @card.description %>
+			</p>
+				<%= link_to 'Edit', edit_card_path(@card) %> |
+				<%= link_to 'Back', cards_path %>
+		</div>
+	</div>
+</div>
 
-<p>
-  <b>Description:</b>
-  <%= @card.description %>
-</p>
 
 
-<%= link_to 'Edit', edit_card_path(@card) %> |
-<%= link_to 'Back', cards_path %>
