@@ -1,5 +1,11 @@
 TravelApp::Application.routes.draw do
 
+  resources :countries
+
+
+  resources :cities
+
+
   resources :cards
 
 
