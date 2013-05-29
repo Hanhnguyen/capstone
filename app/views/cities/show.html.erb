@@ -1,10 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @city.name %>
-</p>
-
+<div class="row">
+	<div class="span6 offset3">
+		<div class="well">
+			<p>
+			  <b>List</b>
+			  <%= @city.name %>
+			</p>
+		</div>
+	</div>
+</div>
 
 <%= link_to 'Edit', edit_city_path(@city) %> |
 <%= link_to 'Back', cities_path %>

@@ -9,7 +9,7 @@ TravelApp::Application.routes.draw do
   resources :cards
 
 
-  devise_for :views
+  devise_for :users
 
   get "pages/home"
   get 'about' => 'pages#about'

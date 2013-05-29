@@ -5,6 +5,5 @@ class Card < ActiveRecord::Base
   validates :user_id, presence: true 
 
   belongs_to :user
-  belongs_to :city
-  belongs_to :country
+  belongs_to :country, :through => :city
 end

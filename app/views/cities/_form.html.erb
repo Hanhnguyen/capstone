@@ -2,10 +2,14 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
+    <%= f.input :name, as: :string %>
+    <%= f.collection_select(:country_id, Country.all, :id, :show_name, input_html: { rows: "3"}, :prompt => true)  %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+
+
+
