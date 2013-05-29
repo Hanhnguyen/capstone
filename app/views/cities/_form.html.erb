@@ -1,9 +1,11 @@
 <%= simple_form_for(@city) do |f| %>
   <%= f.error_notification %>
+  <%= f.full_error :image_file_size, class: "alert alert-error" %>
+  <%= f.full_error :image_content_type, class: "alert alert-error" %>
 
   <div class="form-inputs">
     <%= f.input :name, as: :string %>
-    <%= f.collection_select(:country_id, Country.all, :id, :show_name, input_html: { rows: "3"}, :prompt => true)  %>
+    <%= f.collection_select(:country_id, Country.all, :id, :show_name, :prompt => "Select Country") %>
   </div>
 
   <div class="form-actions">
