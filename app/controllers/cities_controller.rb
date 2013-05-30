@@ -14,11 +14,7 @@ class CitiesController < ApplicationController
   # GET /cities/1.json
   def show
     @city = City.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @city }
-    end
+    @cards = @city.cards
   end
 
   # GET /cities/new

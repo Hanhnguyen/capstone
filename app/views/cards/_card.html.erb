@@ -5,7 +5,7 @@
 	</p>
 	<p>
 			<strong>
-				Posted by <%= card.user.name %>
+				Posted by <%= link_to card.user.name, card.user %>
 			</strong>
 	</p>
 	  <% if current_user == card.user %>
