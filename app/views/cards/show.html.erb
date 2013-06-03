@@ -1,33 +1,42 @@
 <div class="row">
-	<div class="span4 pull-left">
-			<%= image_tag @card.image %>
-	</div>
 
-	<div class="span8 pull-right">
-		<span class="label label-important">
-		  Description
-		</span>
-		<hr style="margin-top: 1px; margin-bottom: 10px;">
-		<p><%= @card.description %></p>
-		
-		<span class="label label-important">
-		  Location
-		</span>
-		<hr style="margin-top: 1px; margin-bottom: 10px;">
+		<div class="span8 offset2">
+			<div class="text-center"><%= image_tag @card.image %></div>
+			
+			<p>	
+				<div class="row">
+					<div class="span2 pull-left">
+						<i class="icon-tags"></i> <span class="label label-important">
+						  Description
+						</span>
+						<hr style="margin-top: 1px; margin-bottom: 10px;">
+						<p><%= @card.description %></p>
 
-		<span class="label label-important">
-		  Tips & Further Information
-		</span>
-		<hr style="margin-top: 1px; margin-bottom: 10px;">
-	
-		<p>
-			Added by: <%= link_to @card.user.name, @card.user %>
-		</p>
-		<% if current_user == @card.user %>
-				<%= link_to 'Edit', edit_card_path(@card) %> |
-		<% end %>
-			<%= link_to 'Back', cards_path %>
-	</div>
+						<i class="icon-map-marker"></i> <span class="label label-important">
+						  Location
+						</span>
+						<hr style="margin-top: 1px; margin-bottom: 10px;">
 
+						<p>
+							Added by: <%= link_to @card.user.name, @card.user %>
+						</p>
+						
+						<% if current_user == @card.user %>
+							<%= link_to 'Edit', edit_card_path(@card) %> |
+						<% end %>
+							<%= link_to 'Back', cards_path %>
+					</div>
+
+					<div class="span6 pull-right">
+						<i class="icon-comment"></i> <span class="label label-important">
+						  Tips & Further Information
+						</span>
+						<hr style="margin-top: 1px; margin-bottom: 10px;">
+					<p><%= @card.more_info %></p>
+				</div>
+			
+			</p>
+		</div>
+</div>
 
 

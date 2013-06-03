@@ -3,8 +3,9 @@
 
   <div class="form-inputs">
     <%= f.input :image, label: "Upload an image" %>
-  	<%= f.input :image_remote_url, label: "or enter a URL" %>
-    <%= f.input :description, as: :text, input_html: { rows: "3"} %>
+  	<%= f.input :image_remote_url, label: "or Enter a URL" %>
+    <%= f.input :description, as: :text, input_html: { rows: "3" } %>
+    <%= f.input :more_info, as: :text, input_html: { rows: "3" } %>
     <%= f.collection_select(:city_id, City.all, :id, :show_city_name, :prompt => "Select City") %>
   </div>
 

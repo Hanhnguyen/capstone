@@ -1,8 +1,9 @@
 <h1><%= @city.name %></h1>
+<hr style="margin-top: 1px; margin-bottom: 10px;">
 
 <div id="cards">
   	<%= render @cards %>
 </div>
-
 <%= link_to 'Edit', edit_city_path(@city) %> |
 <%= link_to 'Back', cities_path %>
+
