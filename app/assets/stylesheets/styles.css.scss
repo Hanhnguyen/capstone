@@ -19,16 +19,18 @@ body{
 	padding-top: 60px;
 }
 
+
 @import 'bootstrap-responsive';
 
 .footer {
-	margin-top: 50px;
+    margin-top: 50px;
     margin-bottom: 10px;
-	color: $grayLight;
-	a {
-		color: $gray;
-	}
+    color: $grayLight;
+    a {
+        color: $gray;
+    }
 }
+
 
 /*Required for jQuery Masonry*/
 
