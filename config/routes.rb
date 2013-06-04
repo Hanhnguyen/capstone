@@ -1,5 +1,7 @@
 TravelApp::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   get "users/show"
 
   resources :countries
