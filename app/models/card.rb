@@ -12,7 +12,7 @@ class Card < ActiveRecord::Base
   belongs_to :city #foreign key- city_id
   has_one :country, :through => :city
 
-  has_attached_file :image, styles: { medium: "320x240>"}
+  has_attached_file :image, styles: { medium: "320x240>", large: "640x480>"}
 	def image_remote_url=(url_value)
     self.image = URI.parse(url_value) unless url_value.blank?
     super

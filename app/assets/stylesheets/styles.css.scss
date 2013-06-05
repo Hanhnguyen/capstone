@@ -1,12 +1,15 @@
 $baseFontFamily: Noto Sans;
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans);
 
+/*navBar*/
+$navbarHeight: 50px;
 $navbarBackground: #800000;
 $navbarText: white;
 $navbarBackgroundHighlight: #800000;
 $navbarLinkColor: white;
 $navbarLinkColorHover: gray;
 $navbarLinkColorActive: gray;
+
 
 .navbar-inner {
   border: 0 !important;
@@ -16,7 +19,7 @@ $navbarLinkColorActive: gray;
 
 
 body{
-	padding-top: 80px;
+	padding-top: 100px;
 }
 
 .white-content-container {
@@ -65,19 +68,21 @@ body{
     font-size: 12px;
     line-height: 1.4em;
     float: left;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 10px #444;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    border: #ddd 1px solid;
     width: 214px;
+
 }
 
 .box img {
 	display: block;
     width: 100%;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 53x;
+    border-radius: 3px;
 }
 
 .description {

@@ -1,11 +1,12 @@
 <div class="box">
 	<%= link_to (image_tag card.image(:medium)), card %>
 	<p class="description">
+		<hr style="margin-top: 1px; margin-bottom: 10px;">
 		<%= card.description %>
 	</p>
 	<p>
 			<strong>
-				Added by <%= link_to card.user.name, card.user %>
+			Added by <%= link_to card.user.name, card.user %>
 			</strong>
 	</p>
 	  <% if current_user == card.user %>
