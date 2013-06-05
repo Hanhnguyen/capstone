@@ -5,6 +5,8 @@
     <%= f.input :image, label: "Upload an image" %>
   	<%= f.input :image_remote_url, label: "or Enter a URL" %>
     <%= f.input :description, as: :text, input_html: { rows: "3" } %>
+    <%= f.input :location, as: :string %>
+    <%= f.input :link, as: :string %>
     <%= f.input :more_info, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
     <%= f.collection_select(:city_id, City.all, :id, :show_city_name, :prompt => "Select City") %>
   </div>

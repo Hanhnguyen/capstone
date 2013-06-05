@@ -1,5 +1,5 @@
-$baseFontFamily: Karla;
-@import url(http://fonts.googleapis.com/css?family=Karla);
+$baseFontFamily: Noto Sans;
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
 
 $navbarBackground: #800000;
 $navbarText: white;
@@ -16,9 +16,35 @@ $navbarLinkColorActive: gray;
 
 
 body{
-	padding-top: 60px;
+	padding-top: 80px;
 }
 
+.white-content-container {
+    padding: 80px 0px 30px;
+    background-color: #fff;
+    border: #ddd 1px solid;
+    -moz-box-shadow: 0 1px 1px #ddd;
+    -webkit-box-shadow: 0 1px 1px #ddd;
+    box-shadow: 0 1px 1px #ddd;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.tag {
+    background-color: #398fd1;
+    color: #fff;
+    position: relative;
+    padding: 100px 6px 3px 6px;
+    line-height: 23px;
+    font-weight: bold;
+    color: #fff;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+}
 
 @import 'bootstrap-responsive';
 
@@ -30,7 +56,6 @@ body{
         color: $gray;
     }
 }
-
 
 /*Required for jQuery Masonry*/
 

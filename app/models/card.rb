@@ -1,6 +1,8 @@
 class Card < ActiveRecord::Base
-  attr_accessible :description, :image, :city_id, :image_remote_url, :more_info
- 
+  attr_accessible :description, :image, :city_id, :image_remote_url, :more_info, :location, :latitude, :longitude, :link
+  geocoded_by :location
+  after_validation :geocode, :if => :location_changed?
+
   validates :description, presence: true
   validates :user_id, presence: true
   validates_attachment :image, presence: true,
