@@ -1,5 +1,5 @@
 class Card < ActiveRecord::Base
-  attr_accessible :description, :image, :city_id, :image_remote_url, :more_info, :location, :latitude, :longitude, :link
+  attr_accessible :description, :image, :city_id, :image_remote_url, :more_info, :location, :latitude, :longitude, :link, :category
   geocoded_by :location
   after_validation :geocode, :if => :location_changed?
 

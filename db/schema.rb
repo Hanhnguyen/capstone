@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604055509) do
+ActiveRecord::Schema.define(:version => 20130606084638) do
 
   create_table "cards", :force => true do |t|
     t.string   "description"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20130604055509) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "link"
+    t.string   "category"
   end
 
   add_index "cards", ["user_id"], :name => "index_cards_on_user_id"

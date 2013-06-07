@@ -4,21 +4,22 @@
 				<div class="span10 offset1">
 					<p><span class="tag">Eateries</span></p>
 				
-					<div class="text-center"><%= image_tag @card.image(:large) %></div>
-				
+					<p><div class="text-center"><%= image_tag @card.image(:large) %></div></p>
+					<hr style="margin-top: 1px; margin-bottom: 10px;">
+
 					<p>	
 						<div class="row">
 							<div class="span4 pull-left">
-								<i class="icon-tags"></i> <span class="label label-important">Description</span>
+								<i class="icon-tags"></i> <strong>Description</strong>
 								<hr style="margin-top: 1px; margin-bottom: 10px;">
 								<p><%= @card.description %></p>
 
-								<i class="icon-map-marker"></i> <span class="label label-important">Location</span>
+								<i class="icon-map-marker"></i> <strong>Location</strong>
 								<hr style="margin-top: 1px; margin-bottom: 10px;">
 								<p><%= @card.location %></p>
 								<p><%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@card.latitude}%2C#{@card.longitude}" %></p>
 
-								<i class="icon-plus"></i> <span class="label label-important">Elsewhere on the Web</span>
+								<i class="icon-plus"></i> <strong>Elsewhere on the Web</strong>
 								<hr style="margin-top: 1px; margin-bottom: 10px;">
 								<p><%= @card.link %></p>
 
@@ -33,7 +34,7 @@
 							</div>
 
 							<div class="span6 pull-right">
-								<i class="icon-comment"></i> <span class="label label-important">Insider Tips</span>
+								<i class="icon-comment"></i> <strong>Insider Tips</strong>
 								<hr style="margin-top: 1px; margin-bottom: 10px;">
 							<p><%= raw(@card.more_info) %></p>
 						</div>

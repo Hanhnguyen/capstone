@@ -2,24 +2,24 @@ $baseFontFamily: Noto Sans;
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans);
 
 /*navBar*/
-$navbarHeight: 50px;
-$navbarBackground: #800000;
-$navbarText: white;
-$navbarBackgroundHighlight: #800000;
-$navbarLinkColor: white;
-$navbarLinkColorHover: gray;
-$navbarLinkColorActive: gray;
-
+$navbarHeight: 100px;
+$navbarBackground: #f8f8f8;
+$navbarBackgroundHighlight: #f8f8f8;
+$navbarLinkColor: #636363;
+$navbarLinkColorHover: grayLight;
+$navbarLinkColorActive: grayLight;
 
 .navbar-inner {
   border: 0 !important;
 }
 
+
+
 @import 'bootstrap';
 
 
 body{
-	padding-top: 100px;
+	padding-top: 150px;
 }
 
 .white-content-container {
