@@ -4,7 +4,7 @@
 				<div class="span10 offset1">
 					<p><span class="tag">Eateries</span></p>
 				
-					<p><div class="text-center"><%= image_tag @card.image(:large) %></div></p>
+					<p><div class="text-center"><a id="main_image"><%= image_tag @card.image(:large) %></a></div></p>
 					<hr style="margin-top: 1px; margin-bottom: 10px;">
 
 					<p>	
@@ -17,7 +17,8 @@
 								<i class="icon-map-marker"></i> <strong>Location</strong>
 								<hr style="margin-top: 1px; margin-bottom: 10px;">
 								<p><%= @card.location %></p>
-								<p><%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@card.latitude}%2C#{@card.longitude}" %></p>
+								<div id="locations">
+								</div>
 
 								<i class="icon-plus"></i> <strong>Elsewhere on the Web</strong>
 								<hr style="margin-top: 1px; margin-bottom: 10px;">
@@ -37,9 +38,53 @@
 								<i class="icon-comment"></i> <strong>Insider Tips</strong>
 								<hr style="margin-top: 1px; margin-bottom: 10px;">
 							<p><%= raw(@card.more_info) %></p>
-						</div>
-					
-					</p>
+							</div>
+						</p>
+						/*Google Maps*/
+
+								<script type="text/javascript"
+								  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz3cAvwY90pEX2qnzKga6LP8B3kTkPRzE&sensor=false">
+								</script>
+
+								<script type="text/javascript">
+								var myLatlng = new google.maps.LatLng(<%= @card.latitude %>, <%= @card.longitude %>);
+								var map
+								var marker
+								function initialize() {
+								        var mapOptions = {
+								          center: myLatlng,
+								          zoom: 10,
+								          mapTypeId: google.maps.MapTypeId.ROADMAP
+								        };
+
+								        map = new google.maps.Map(document.getElementById("map"),
+								            mapOptions);
+								        
+								        marker = new google.maps.Marker({
+											      position: myLatlng,
+											      map: map,
+											      draggable:true,
+    												animation: google.maps.Animation.DROP,
+											      title: 'Hello World!'
+											  });
+
+											  google.maps.event.addListener(marker, 'click', toggleBounce);
+											}
+
+								function toggleBounce() {
+
+									  if (marker.getAnimation() != null) {
+									    marker.setAnimation(null);
+									  } else {
+									    marker.setAnimation(google.maps.Animation.BOUNCE);
+									  }
+								}
+
+								google.maps.event.addDomListener(window, 'load', initialize);
+
+									$("#locations").prepend('<div id="map"></div>');
+
+								</script>
 				</div>
 		</div>
 	</div>

@@ -1,13 +1,13 @@
-$baseFontFamily: Noto Sans;
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+$baseFontFamily: Open Sans ;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 /*navBar*/
 $navbarHeight: 100px;
 $navbarBackground: #f8f8f8;
 $navbarBackgroundHighlight: #f8f8f8;
 $navbarLinkColor: #636363;
-$navbarLinkColorHover: grayLight;
-$navbarLinkColorActive: grayLight;
+$navbarLinkColorHover: black;
+$navbarLinkColorActive: black;
 
 .navbar-inner {
   border: 0 !important;
@@ -89,3 +89,8 @@ body{
     margin: 10px 0 5px;
 }
 
+#map {
+    width: 100%;
+    min-height: 300px;
+    margin: 0 0 4% 0;
+}

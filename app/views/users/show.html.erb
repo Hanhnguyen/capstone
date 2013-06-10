@@ -1,7 +1,9 @@
-<h1><%= link_to (image_tag @user.avatar(:thumb)), @user %> <%= @user.name %></h1>
-<hr style="margin-top: 1px; margin-bottom: 10px;">
+<div id="container" style="padding: 0px 70px 0px">
+	<h1><%= link_to (image_tag @user.avatar(:thumb)), @user %> <%= @user.name %></h1>
+	<hr style="margin-top: 1px; margin-bottom: 10px;">
 
-<div id="cards">
-  <%= render @cards %>
+	<div id="cards">
+	  <%= render @cards %>
+	</div>
 </div>
 
