@@ -6,7 +6,6 @@ gem 'simple_form'
 gem "paperclip", "~> 3.0"
 gem "ckeditor"
 gem 'geocoder'
-gem 'fancybox2-rails', '~> 0.2.4'
 gem 'aws-sdk'
 
 # Bundle edge Rails instead:
