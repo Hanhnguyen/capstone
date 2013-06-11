@@ -25,10 +25,12 @@
 								<hr style="margin-top: 1px; margin-bottom: 10px;">
 								<p><%= raw(@card.link) %></p>
 								
+								<div class="edit-delete" style="margin-top: 30px;">
 								<% if current_user == @card.user %>
 									<%= link_to 'Edit', edit_card_path(@card) %> |
 								<% end %>
 									<%= link_to 'Back', cards_path %>
+								</div>
 							</div>
 						</div>
 
@@ -40,7 +42,7 @@
 							<p>
 								<strong>Added by:</strong> <%= link_to @card.user.name, @card.user %>
 							</p>
-							
+
 							</div>
 						
 						</p>
@@ -71,7 +73,7 @@
 											  });
 
 											  google.maps.event.addListener(marker, 'click', toggleBounce);
-											}
+								}
 
 								function toggleBounce() {
 
