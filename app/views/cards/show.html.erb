@@ -1,8 +1,7 @@
 <div class="body">
-	<div class="white-content-container">
 		<div class="row">
 				<div class="span10 offset1">
-					<p><span class="tag">Eateries</span></p>
+					<p><span class="tag"><%= @card.category.name %></span></p>
 				
 					<p><div class="text-center"><a id="main_image"><%= image_tag @card.image(:large) %></a></div></p>
 					<hr style="margin-top: 1px; margin-bottom: 10px;">
@@ -10,6 +9,8 @@
 					<p>	
 						<div class="row">
 							<div class="span4 pull-left">
+								<div class="white-content-container">
+
 								<i class="icon-tags"></i> <strong>Description</strong>
 								<hr style="margin-top: 1px; margin-bottom: 10px;">
 								<p><%= @card.description %></p>
@@ -22,10 +23,10 @@
 
 								<i class="icon-plus"></i> <strong>Elsewhere on the Web</strong>
 								<hr style="margin-top: 1px; margin-bottom: 10px;">
-								<p><%= @card.link %></p>
+								<p><%= raw(@card.link) %></p>
 
 								<p>
-									Added by: <%= link_to @card.user.name, @card.user %>
+									<strong>Added by:</strong> <%= link_to @card.user.name, @card.user %>
 								</p>
 								
 								<% if current_user == @card.user %>
@@ -33,6 +34,7 @@
 								<% end %>
 									<%= link_to 'Back', cards_path %>
 							</div>
+						</div>
 
 							<div class="span6 pull-right">
 								<i class="icon-comment"></i> <strong>Insider Tips</strong>
@@ -51,7 +53,7 @@
 								function initialize() {
 								        var mapOptions = {
 								          center: myLatlng,
-								          zoom: 10,
+								          zoom: 13,
 								          mapTypeId: google.maps.MapTypeId.ROADMAP
 								        };
 
@@ -85,7 +87,6 @@
 								</script>
 				</div>
 		</div>
-	</div>
 </div>
 
 

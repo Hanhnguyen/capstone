@@ -1,5 +1,5 @@
 class Card < ActiveRecord::Base
-  attr_accessible :description, :image, :city_id, :image_remote_url, :more_info, :location, :latitude, :longitude, :link, :category
+  attr_accessible :description, :image, :city_id, :image_remote_url, :more_info, :location, :latitude, :longitude, :link, :category_id
   geocoded_by :location
   after_validation :geocode, :if => :location_changed?
 
@@ -10,6 +10,7 @@ class Card < ActiveRecord::Base
  																size: { less_than: 5.megabytes }
   belongs_to :user #foreign key- user_id
   belongs_to :city #foreign key- city_id
+  belongs_to :category
   has_one :country, :through => :city
 
   has_attached_file :image, styles: { medium: "320x240>", large: "640x480>"}
@@ -18,3 +19,5 @@ class Card < ActiveRecord::Base
     super
   end
 end
+
+
