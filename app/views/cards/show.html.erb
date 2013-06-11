@@ -24,10 +24,6 @@
 								<i class="icon-plus"></i> <strong>Elsewhere on the Web</strong>
 								<hr style="margin-top: 1px; margin-bottom: 10px;">
 								<p><%= raw(@card.link) %></p>
-
-								<p>
-									<strong>Added by:</strong> <%= link_to @card.user.name, @card.user %>
-								</p>
 								
 								<% if current_user == @card.user %>
 									<%= link_to 'Edit', edit_card_path(@card) %> |
@@ -40,7 +36,13 @@
 								<i class="icon-comment"></i> <strong>Insider Tips</strong>
 								<hr style="margin-top: 1px; margin-bottom: 10px;">
 							<p><%= raw(@card.more_info) %></p>
+						
+							<p>
+								<strong>Added by:</strong> <%= link_to @card.user.name, @card.user %>
+							</p>
+							
 							</div>
+						
 						</p>
 								<script type="text/javascript"
 								  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz3cAvwY90pEX2qnzKga6LP8B3kTkPRzE&sensor=false">
