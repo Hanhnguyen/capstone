@@ -1,9 +1,42 @@
-<h1><%= @city.name %></h1>
-<hr style="margin-top: 1px; margin-bottom: 10px;">
+<div id="container" style="padding: 0px 70px 0px">
+	<h1><%= @city.name %></h1>
+	<hr style="margin-top: 1px; margin-bottom: 10px;">
 
-<div id="cards">
-  	<%= render @cards %>
+<p>
+	<ul id="filters" class="options">
+  <li><a href="#" data-filter="*">Show all</a></li>
+  <li><a href="#" data-filter=".Food">Food</a></li>
+  <li><a href="#" data-filter=".Outdoors">Outdoors</a></li>
+  <li><a href="#" data-filter=".Nightlife">Nightlife</a></li>
+  <li><a href="#" data-filter=".Sightseeing">Sightseeing</a></li>
+  <li><a href="#" data-filter=".Chill">Chill</a></li>
+	</ul>
+	</p>
+
+	<div id="cards">
+	  <%= render @cards %>
+	</div>
+	
+	<script type="text/javascript">
+		var $cards = $('#cards');
+
+	// filter items when filter link is clicked
+		$('#filters a').click(function(){
+		  var selector = $(this).attr('data-filter');
+		  $cards.isotope({ filter: selector });
+		  return false;
+		});
+		
+		$('#filters a')
+	       .css("opacity","0.8")
+	       .hover(function(){
+	           $(this).css("opacity","1");
+	       }, function() {
+	           $(this).css("opacity","0.8");
+		});
+	</script>
+
+	<%= link_to 'Edit', edit_city_path(@city) %> |
+	<%= link_to 'Back', cities_path %>
 </div>
-<%= link_to 'Edit', edit_city_path(@city) %> |
-<%= link_to 'Back', cities_path %>
 

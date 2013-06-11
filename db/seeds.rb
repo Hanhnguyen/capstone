@@ -9,3 +9,4 @@
 categories = ["Food", "Sightseeing", "Outdoors", "Nightlife", "Chill"]
 
 categories.each { |c| Category.create(name: c) }
+

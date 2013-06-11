@@ -6,5 +6,3 @@ jQuery ->
 	$('#cards').imagesLoaded ->
 		$('#cards').isotope itemSelector: ".box"
 
-jQuery ->
-  $('#main_image').fancybox()
