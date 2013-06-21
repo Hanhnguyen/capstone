@@ -3,16 +3,16 @@ $baseFontFamily: Open Sans ;
 
 /*navBar*/
 $navbarHeight: 100px;
-$navbarBackground: #f8f8f8;
-$navbarBackgroundHighlight: #f8f8f8;
-$navbarLinkColor: #636363;
-$navbarLinkColorHover: black;
-$navbarLinkColorActive: black;
+$navbarBackground: black;
+$navbarBackgroundHighlight: black;
+$navbarLinkColor: #f8f8f8;
+$navbarLinkColorHover: gray;
+$navbarLinkColorActive: gray;
+
 
 .navbar-inner {
   border: 0 !important;
 }
-
 
 
 @import 'bootstrap';
@@ -87,13 +87,56 @@ body{
     margin: 10px 0 5px;
 }
 
+.description_city {
+  text-align: center;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 10px 10px;
+}
+/*Maps*/
 #map {
     width: 100%;
     min-height: 300px;
     margin: 0 0 4% 0;
 }
 
-/**** Isotope filtering ****/
+#map img {
+    max-width: none;
+}
+
+.infowindow {
+  width: 350px; 
+  height: auto; 
+  overflow: hidden !important;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.infowindow .title {
+  font-size: 19px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.infowindow .address {
+  font-size: 12px;
+  color: #545454;
+}
+
+.infowindow .des {
+  width: 345px;
+  font-size: 13px;
+  line-height: 15px;
+  color: #545454;
+}
+
+/*Isotope filtering*/
 
 .isotope-item {
   z-index: 2;

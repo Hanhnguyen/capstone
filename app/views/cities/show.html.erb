@@ -11,7 +11,7 @@
   <li><a href="#" data-filter=".Sightseeing">Sightseeing</a></li>
   <li><a href="#" data-filter=".Chill">Chill</a></li>
 	</ul>
-	</p>
+</p>
 
 	<div id="cards">
 	  <%= render @cards %>
@@ -38,5 +38,55 @@
 
 	<%= link_to 'Edit', edit_city_path(@city) %> |
 	<%= link_to 'Back', cities_path %>
-</div>
 
+<div id="map">
+</div>
+  <!-- start: google maps api -->
+	<script type="text/javascript"
+	  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz3cAvwY90pEX2qnzKga6LP8B3kTkPRzE&sensor=false">
+	</script>
+	<!-- end: google maps api -->
+
+	<script type="text/javascript">
+	function initialize() {
+	    var mapOptions = {
+	      center: new google.maps.LatLng(<%= Geocoder.coordinates("@city.name")%>),
+	      zoom: 15,
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
+	    };
+
+	    var map = new google.maps.Map(document.getElementById("map"),
+	        mapOptions);
+
+	    var infowindow = new google.maps.InfoWindow();
+
+	    var bounds = new google.maps.LatLngBounds();
+
+	    <% @cards.each do |card| %>
+	    	var <%= "pos#{card.id}" %> = new  google.maps.LatLng(<%= card.latitude %>, <%= card.longitude %>);
+	    	var <%= "mar#{card.id}" %> = new google.maps.Marker({
+		      position: <%= "pos#{card.id}" %>,
+		      map: map,
+		      draggable:true,
+					animation: google.maps.Animation.DROP,
+		  	});
+		  	bounds.extend(<%= "pos#{card.id}" %>);
+		  	map.fitBounds(bounds);
+			
+			  var <%= "con#{card.id}" %> = '<div class="infowindow">'+
+        '<div class="address"><%= card.location %> | <%= card.category.name.upcase %></div></div>'+
+        '<img src="http://maps.google.com/maps/api/staticmap?sensor=false&center=<%= card.latitude %>,<%= card.longitude %>&zoom=15&size=345x150&markers=color:blue|label:|<%= card.latitude %>,<%= card.longitude %>" style="border: solid 1px #C6C6C6; margin-bottom: 10px;">'+
+        '<div class="des" align="justify" style="margin-top: 10px; margin-bottom: 20px;"><%= card.description.upcase %></div>'+    
+        '<a href="<%= card_path(card) %>"><div class="btn btn-primary padding: 10px;">LEARN MORE</div></div></a>'+
+        '</div>';
+
+        google.maps.event.addListener(<%= "mar#{card.id}" %>, 'click', function() {
+          infowindow.close();
+          infowindow.setContent(<%= "con#{card.id}" %>);
+          infowindow.open(map,<%= "mar#{card.id}" %>);
+        });
+			<% end %>
+		}
+			google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+</div>
