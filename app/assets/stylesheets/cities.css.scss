@@ -1,3 +1,42 @@
 // Place all the styles related to the Cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#map {
+    width: 100%;
+    min-height: 300px;
+    margin: 0 0 4% 0;
+}
+
+#map img {
+    max-width: none;
+}
+
+.infowindow {
+  width: 350px; 
+  height: auto; 
+  overflow: hidden !important;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.infowindow .title {
+  font-size: 19px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.infowindow .address {
+  font-size: 12px;
+  color: #545454;
+}
+
+.infowindow .des {
+  width: 345px;
+  font-size: 13px;
+  line-height: 15px;
+  color: #545454;
+}
